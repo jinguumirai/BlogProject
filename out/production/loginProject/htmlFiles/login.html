@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <script src="jsFiles/login.js"></script>
+        <link rel="stylesheet" href="cssFiles/commonCss.css">
+    </head>
+    <body>
+        <div id="navbar-placeholder"></div>
+        <script>
+            fetch('htmlFiles/title.html') // 使用Fetch API加载导航栏
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data; // 将获取的数据插入到占位符中
+                });
+        </script>
+        <div class="login-form">
+            <p>
+                <input type="text" id="username" placeholder="username" autocomplete="on" required>
+            </p>
+            <p>
+                <input type="password" id="password" placeholder="password" required>
+            </p>
+            <p>
+                <button onclick=login()>login</button>
+            </p>
+        </div>
+    </body>
+</html>
